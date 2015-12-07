@@ -1,6 +1,13 @@
 html
 	head
 		title!=title
+		link(href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css')
+		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
 		link(rel="stylesheet", href="static/css/style.css")
 	body
-		block content
+		header
+			a#logo(href="/") Transparency Project
+		nav
+			a(href="#") Whatevs
+		main
+			block content
