@@ -4,6 +4,11 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	p = require('./package.json');
 
+
+gulp.task('start', function () {
+  $.nodemon({ script: 'app.js', ext: 'js html scss', env: { 'NODE_ENV': 'development' }})
+})
+
 gulp.task('browserSync', function() {
   browserSync({
     proxy: 'http://localhost:9001',
@@ -24,7 +29,7 @@ gulp.task('sass', function (){
     }));
 });
 
-gulp.task('default', ['sass', 'browserSync'], function(){
+gulp.task('default', ['sass', 'start', 'browserSync'], function(){
 	gulp.watch('public/scss/**/*.scss', ['sass']);
 	gulp.watch('**/*.jade').on('change', browserSync.reload);
 });

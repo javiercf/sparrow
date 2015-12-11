@@ -22,10 +22,12 @@
   },
   "homepage": "https://github.com/javiercf/sparrow#readme",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "chai": "^3.4.1",
     "express": "^4.13.3",
     "jade": "^1.11.0",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "mongoose": "^4.3.0"
   },
   "devDependencies": {
     "browser-sync": "^2.10.0",
@@ -34,6 +36,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-load-plugins": "^1.1.0",
+    "gulp-nodemon": "^2.0.4",
     "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0"
   }
