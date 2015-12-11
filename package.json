@@ -4,7 +4,7 @@
   "description": "An open government platform",
   "main": "app.js",
   "scripts": {
-    "test": "mocha ./tests/*.js"
+    "test": "mocha ./test/**/*.js"
   },
   "repository": {
     "type": "git",

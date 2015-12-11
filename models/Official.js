@@ -6,7 +6,8 @@ var OfficialSchema = new mongoose.Schema({
 	parties:[{type: mongoose.Schema.Types.ObjectId, ref: 'Party'}],
 	in_office: Boolean,
 	gender: String,
-	bio: String
+	bio: String,
+	position: [String],
 });
 
 module.exports = mongoose.model('Official', OfficialSchema);
