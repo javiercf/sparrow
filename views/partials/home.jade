@@ -1,16 +1,16 @@
 .module
 	.module-content
 		ul.listing
-			li.listItem
+			li.listItem(ng-repeat="official in officials")
 				.listItem--content
 					.listItem--utils
 						button.btn
 							i.material-icons keyboard_arrow_up
-						span.votes_count 179461
+						span.votes_count 0
 						button.btn
 							i.material-icons keyboard_arrow_down
 					a(href="#")
-						h4 Enrique Peñalosa
+						h4 {{official.fullname}}
 					.block
 						a.tag(href="#") Partido Verde
 						a.tag(href="#") Alcaldía
