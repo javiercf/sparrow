@@ -6,7 +6,9 @@ var UserSchema = new mongoose.Schema({
 	email: String,
 	username: String,
 	password: String,
-	avatar: String
+	avatar: String,
+	claimed_official: {type: Number, ref: 'Official'},
+	is_admin: Boolean
 });
 
 UserSchema.virtual('fullname').get(function(){

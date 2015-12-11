@@ -7,4 +7,8 @@ var PartySchema = new mongoose.Schema({
 	logo: String
 });
 
+PartySchema.methods.getPartyMembers = function getPartyMembers(cb) {
+	return this.model('Official').find({party:this});
+}
+
 module.exports = mongoose.model('Party', PartySchema);

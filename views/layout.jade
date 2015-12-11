@@ -7,6 +7,12 @@ html
 	body
 		header
 			a#logo(href="/") Transparency Project
+			button.auth Sign In / Register
+			.authforms
+				form(action="/auth/login" method="post")
+					input(type="text" name="username" placeholder="username")
+					input(type="password" name="password" placeholder="password")
+					button.btn-block(type="submit") Login
 		nav
 			a(href="#") Whatevs
 		main
