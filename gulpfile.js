@@ -29,7 +29,23 @@ gulp.task('sass', function (){
     }));
 });
 
-gulp.task('default', ['sass', 'start', 'browserSync'], function(){
+gulp.task('js', function () {
+	return gulp.src('./public/js/*.js')
+	.pipe($.sourcemaps.init())
+	.pipe($.jshint())
+	.pipe($.uglify())
+	.pipe($.rename({
+		extname: '.min.js'
+	}))
+	.pipe($.sourcemaps.write('.'))
+	.pipe(gulp.dest('./public/js/min/'))
+	.pipe(browserSync.reload({
+      stream: true
+    }));
+})
+
+gulp.task('default', ['sass', 'js', 'start', 'browserSync'], function(){
 	gulp.watch('public/scss/**/*.scss', ['sass']);
+	gulp.watch('public/js/**/*.js', ['js']);
 	gulp.watch('**/*.jade').on('change', browserSync.reload);
 });

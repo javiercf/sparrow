@@ -89,32 +89,26 @@
 
 .authforms{
 	position: absolute;
-	right: 2em;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 25%;
 	background: #fff;
 	border: 1px solid #f1f1f1;
 	padding: 1em;
 	z-index: 999;
-
-	&:before{
-		content: '';
-		height: 0px;
-		width: 0px;
-		display: block;
-		border: 10px solid transparent;
-		border-bottom-color: #fff;
-		position: absolute;
-		top: -20px;
-		right: 1em;
-	}
+	max-width: 320px;
 }
 
 form{
-	input[type="text"], input[type="password"]{
+	input[type="text"], input[type="password"], input[type="email"]{
 		background: #fff;
 		display: block;
+		width: 100%;
 		padding: .5em;
 		border: 1px solid #f1f1f1;
 		margin-bottom: .5em;
+		font-size: 1em;
 	}
 }
 
@@ -127,4 +121,5 @@ form{
 	padding: .5em;
 	text-transform: uppercase;
 	width: 100%;
+	font-size: 1em;
 }

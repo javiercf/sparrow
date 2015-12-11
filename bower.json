@@ -1,0 +1,27 @@
+{
+  "name": "sparrow",
+  "description": "An open government platform",
+  "main": "app.js",
+  "authors": [
+    "Javier Cubides Ferrans"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "opengov",
+    "node",
+    "express"
+  ],
+  "homepage": "https://github.com/javiercf/sparrow",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}

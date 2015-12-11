@@ -32,3 +32,25 @@ p{
 		outline: none;
 	}
 }
+
+.separator{
+	text-align: center;
+	position: relative;
+	padding: 1em 0;
+
+	&:before{
+		content:'';
+		border-top: 1px solid #ddd;
+		position: absolute;
+		top: 50%;
+		display: block;
+		width: 100%;
+	}
+
+	span{
+		background: #fff;
+		display: inline-block;
+		padding: 1em;
+		position: relative;
+	}
+}

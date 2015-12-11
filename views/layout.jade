@@ -4,16 +4,27 @@ html
 		link(href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css')
 		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
 		link(rel="stylesheet", href="static/css/style.css")
-	body
+	body(ng-app="sparrowApp")
 		header
 			a#logo(href="/") Transparency Project
 			button.auth Sign In / Register
+		nav
+			a(href="#") Whatevs
+		main(ng-view)
+		.overlay
 			.authforms
 				form(action="/auth/login" method="post")
 					input(type="text" name="username" placeholder="username")
 					input(type="password" name="password" placeholder="password")
+					p.message!=message 
 					button.btn-block(type="submit") Login
-		nav
-			a(href="#") Whatevs
-		main
-			block content
+				.separator
+					span or
+				form(action="/auth/register" method="post")
+					input(type="email", name="new_email", placeholder="email")
+					input(type="text", name="new_username", placeholder="username")
+					input(type="password", name="new_password", placeholder="password")
+					p.message!=message
+					button.btn-block(type="submit") Register
+		script(src="static/libs/angular.min.js")
+		script(src="static/js/min/app.min.js")
