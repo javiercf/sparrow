@@ -18,7 +18,12 @@ module.exports = function(passport){
 
 	/* Main View */
 	router.get('/', function(req, res) {
-		res.render('layout', {title:'Sparrow', message:req.flash('message')});
+		res.render('layout', {
+			title:'Sparrow', 
+			message:req.flash('message'), 
+			reg_message:req.flash('registration_message'),
+			user: req.user
+		});
 	});
 
 	/* Static Assets */

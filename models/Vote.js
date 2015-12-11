@@ -6,4 +6,14 @@ var VoteSchema = new mongoose.Schema({
 	value: Number
 });
 
+VoteSchema.methods.updateVotes = function updateVotes(cb) {
+	if(this.value<0){
+		this.official.meta.downVotes++;
+	} else{
+		this.official.meta.upVotes++;
+	}
+	this.official.save();
+	return cb;
+}
+
 module.exports = mongoose.model('Vote', VoteSchema);

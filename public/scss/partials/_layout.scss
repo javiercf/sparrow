@@ -16,14 +16,25 @@ body{
 
 header{
 	//background-image: linear-gradient($sparrow, scale-color($sparrow, $lightness:5%), $sparrow);
-	background: $sparrow;
+	background: scale-color($black, $lightness:-20%);
+	border-bottom: 1px solid $sparrow;
 	padding: 0 1em;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 50px;
+	height: 40px;
 	z-index: 99999;
+
+	.right{
+		float: right;
+		*{
+			line-height: 40px;
+			color:#fff;
+			text-decoration: none;
+			font-size: .8em;
+		}
+	}
 }
 
 nav{
@@ -32,8 +43,8 @@ nav{
 	width: 220px;
 	background: $black;
 	height: 100%;
-	top: 50px;
-	box-shadow: inset -5px 0 10px #222;
+	top: 40px;
+	//box-shadow: inset -5px 0 10px #222;
 	a{
 		padding: 1em;
 		color:#fff;
@@ -49,7 +60,7 @@ nav{
 
 main{
 	position: relative;
-	top: 50px;
+	top: 40px;
 	padding: 1em;
 }
 
@@ -59,14 +70,13 @@ main{
 	text-transform: uppercase;
 	text-shadow: 2px 1px 2px rgba(#000,.1);
 	font-weight: 300;
-	font-size: 1.4em;
-	line-height: 50px;
+	font-size: .8em;
+	line-height: 40px;
 }
 
 .overlay{
 	position: fixed;
 	background: rgba(#111, .6);
-	display: none;
 	width: 100%;
 	height: 100%;
 	z-index: 99999;

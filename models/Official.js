@@ -8,6 +8,10 @@ var OfficialSchema = new mongoose.Schema({
 	gender: String,
 	bio: String,
 	position: [String],
+	meta: {
+		upVotes: Number,
+		downVotes: Number
+	}
 });
 
 OfficialSchema.virtual('fullname').get(function(){
