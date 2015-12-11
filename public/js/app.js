@@ -1,13 +1,10 @@
-var app = angular.module('sparrowApp', []);
+var app = angular.module('sparrowApp', ['ngRoute']);
 
-app.config(function($routeProvider, $locationProvider) {
-	$routeProvider.
-	when('/', {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+	$routeProvider
+	.when('/', {
 		templateUrl: 'partials/home'
-	}).
-	otherwise({
-		redirectTo: '/'
 	});
 
 	$locationProvider.html5Mode(true);
-});
+}]);

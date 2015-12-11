@@ -4,6 +4,7 @@ html
 		link(href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css')
 		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
 		link(rel="stylesheet", href="static/css/style.css")
+		base(href="/")
 	body(ng-app="sparrowApp")
 		header
 			a#logo(href="/") Transparency Project
@@ -26,5 +27,6 @@ html
 					input(type="password", name="new_password", placeholder="password")
 					p.message!=message
 					button.btn-block(type="submit") Register
-		script(src="static/libs/angular.min.js")
+		script(src="assets/angular/angular.min.js")
+		script(src="assets/angular-route/angular-route.min.js")
 		script(src="static/js/min/app.min.js")

@@ -11,7 +11,7 @@ module.exports = function(passport){
 	router.use('/auth', auth(passport));
 
 	/* Angular partials */
-	router.get('/partials', function(req, res) {
+	router.get('/partials/:name', function(req, res) {
 		var name = req.params.name;
 		res.render('partials/'+ name);
 	});
@@ -23,6 +23,9 @@ module.exports = function(passport){
 
 	/* Static Assets */
 	router.use('/static', express.static('public'));
+
+	/* Bower Assets */
+	router.use('/assets', express.static('bower_components'));
 
 	return router
 };
