@@ -10,4 +10,10 @@ var OfficialSchema = new mongoose.Schema({
 	position: [String],
 });
 
+OfficialSchema.virtual('fullname').get(function(){
+	return this.first_name+' '+this.last_name;
+});
+
+OfficialSchema.set('toJSON', {virtuals:true});
+
 module.exports = mongoose.model('Official', OfficialSchema);

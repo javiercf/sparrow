@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var jade = require('jade');
-var officials = require('./routes/official');
+var api = require('./routes/api');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
@@ -21,7 +21,7 @@ app.set('view engine', 'jade');
 app.set('port', process.env.PORT || 9001 );
 app.use('/static', express.static('public'));
 
-app.use('/officials', officials);
+app.use('/api', api);
 
 	
 app.get('/', function(req, res) {
