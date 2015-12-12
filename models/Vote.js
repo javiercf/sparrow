@@ -1,19 +1,10 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+	Official = require('./Official');
 
 var VoteSchema = new mongoose.Schema({
-	user: {type: Number, ref: 'User'},
-	official: {type: Number, ref: 'Official'},
+	user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+	official: {type: mongoose.Schema.Types.ObjectId, ref: 'Official'},
 	value: Number
 });
-
-VoteSchema.methods.updateVotes = function updateVotes(cb) {
-	if(this.value<0){
-		this.official.meta.downVotes++;
-	} else{
-		this.official.meta.upVotes++;
-	}
-	this.official.save();
-	return cb;
-}
 
 module.exports = mongoose.model('Vote', VoteSchema);

@@ -4,10 +4,10 @@
 			li.listItem(ng-repeat="official in officials")
 				.listItem--content
 					.listItem--utils
-						button.btn
+						button.btn(ng-click="upVote($index, official._id, user.id)")
 							i.material-icons keyboard_arrow_up
-						span.votes_count 0
-						button.btn
+						span.votes_count {{official.voteCount}}
+						button.btn(ng-click="downVote($index, official._id, user.id)")
 							i.material-icons keyboard_arrow_down
 					a(href="#")
 						h4 {{official.fullname}}

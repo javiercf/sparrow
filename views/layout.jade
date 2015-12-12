@@ -10,7 +10,7 @@ html
 			a#logo(href="/") Transparency Project
 			.right
 				if user
-					a(href="#")!=user.username
+					a(href="#", ng-init="user=#{JSON.stringify(user)}")!=user.username
 				else
 					button.auth(ng-click='overlay=!overlay') Sign In / Register
 		nav
