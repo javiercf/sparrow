@@ -1,18 +1,46 @@
 .module
 	.module-content
-		ul.listing
-			li.listItem(ng-repeat="official in officials")
-				.listItem--content
-					.listItem--utils
+		form
+			input(type="text", placeholder="Buscar..." ng-model="search.$")
+.module
+	ul.listing
+		li.listItem(ng-repeat="official in officials|filter:search|orderBy:'-voteCount'")
+			.listItem--content.module-content
+				.votes
+					button.btn(ng-click="upVote($index, official._id, user.id)")
+						i.material-icons keyboard_arrow_up
+					span.votes_count {{official.voteCount}}
+					button.btn(ng-click="downVote($index, official._id, user.id)")
+						i.material-icons keyboard_arrow_down
+				a(href="#")
+					h4 {{official.fullname}}
+				.block
+					a.tag(href="#", ng-repeat="party in official.parties") {{party}}
+					a.tag(href="#", ng-repeat="pos in official.position") {{pos}}
+				p {{official.bio}}
+				a.toggleData(href="#")
+					i.material-icons more_vert
+			ul.comments
+				li
+					.comment_user javcferrans
+						
+					.comment-block
+						p Que señor tan malo
+					.votes
 						button.btn(ng-click="upVote($index, official._id, user.id)")
 							i.material-icons keyboard_arrow_up
-						span.votes_count {{official.voteCount}}
+						span.votes_count 0
 						button.btn(ng-click="downVote($index, official._id, user.id)")
 							i.material-icons keyboard_arrow_down
-					a(href="#")
-						h4 {{official.fullname}}
-					.block
-						a.tag(href="#") Partido Verde
-						a.tag(href="#") Alcaldía
-					a.toggleData(href="#")
-						i.material-icons more_vert
+				li
+					.comment_user javcferrans
+						
+					.comment-block
+						p Que señor tan malo
+					.votes
+						button.btn(ng-click="upVote($index, official._id, user.id)")
+							i.material-icons keyboard_arrow_up
+						span.votes_count 0
+						button.btn(ng-click="downVote($index, official._id, user.id)")
+							i.material-icons keyboard_arrow_down
+
