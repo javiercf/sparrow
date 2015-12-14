@@ -14,3 +14,13 @@ $breakpoints: (
     }
   }
 }
+
+@mixin button($color, $textcolor) {
+  background: none;
+  color: $color;
+  border-radius: 4px;
+  padding: .5em 1em;
+  text-transform: uppercase;
+  border: 1px solid $color;
+  cursor: pointer;
+}

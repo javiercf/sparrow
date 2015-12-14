@@ -7,10 +7,10 @@
 		li.listItem(ng-repeat="official in officials|filter:search|orderBy:'-voteCount'")
 			.listItem--content.module-content
 				.votes
-					button.btn(ng-click="upVote($index, official._id, user.id)")
+					button.btn-vote(ng-click="upVote($index, official._id, user.id)")
 						i.material-icons keyboard_arrow_up
 					span.votes_count {{official.voteCount}}
-					button.btn(ng-click="downVote($index, official._id, user.id)")
+					button.btn-vote(ng-click="downVote($index, official._id, user.id)")
 						i.material-icons keyboard_arrow_down
 				a(href="#")
 					h4 {{official.fullname}}
@@ -20,27 +20,23 @@
 				p {{official.bio}}
 				a.toggleData(href="#")
 					i.material-icons more_vert
-			ul.comments
-				li
-					.comment_user javcferrans
-						
-					.comment-block
-						p Que señor tan malo
-					.votes
-						button.btn(ng-click="upVote($index, official._id, user.id)")
-							i.material-icons keyboard_arrow_up
-						span.votes_count 0
-						button.btn(ng-click="downVote($index, official._id, user.id)")
-							i.material-icons keyboard_arrow_down
-				li
-					.comment_user javcferrans
-						
-					.comment-block
-						p Que señor tan malo
-					.votes
-						button.btn(ng-click="upVote($index, official._id, user.id)")
-							i.material-icons keyboard_arrow_up
-						span.votes_count 0
-						button.btn(ng-click="downVote($index, official._id, user.id)")
-							i.material-icons keyboard_arrow_down
+			.comments
+				form(ng-submit="comment()")
+					textarea(name="text")
+					input(type="hidden", name="user", ng-value="{{user.id}}")
+					input(type="hidden", name="official", ng-value="{{official._id}}")
+					button.btn(type="submit") Comment
+				ul
+					li
+						.comment_user javcferrans
+							
+						.comment-block
+							p Que señor tan malo
+						.votes
+							button.btn-vote(ng-click="upVote($index, official._id, user.id)")
+								i.material-icons keyboard_arrow_up
+							span.votes_count 0
+							button.btn-vote(ng-click="downVote($index, official._id, user.id)")
+								i.material-icons keyboard_arrow_down
+			
 

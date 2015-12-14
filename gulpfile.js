@@ -31,8 +31,8 @@ gulp.task('nodemon', function (cb) {
 	});
 
 gulp.task('browserSync', ['nodemon'], function () {
-  browserSync.init({ proxy: 'http://localhost:9001', notify:false});
-});
+	browserSync.init({ proxy: 'http://localhost:9001', notify:false});
+	});
 
 
 
@@ -40,6 +40,10 @@ gulp.task('sass', function (){
 	return gulp.src('public/scss/**/*.scss')
 	.pipe($.sourcemaps.init())
 	.pipe($.sass())
+	.on('error', function (err) {
+		console.log(err.message);
+		this.emit('end');
+	})
 	.pipe($.concat('style.css'))
 	.pipe($.autoprefixer())
 	.pipe($.sourcemaps.write())

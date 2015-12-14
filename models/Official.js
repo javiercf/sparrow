@@ -1,5 +1,4 @@
-var mongoose = require('mongoose'),
-Vote = require('./Vote');
+var mongoose = require('mongoose');
 
 var OfficialSchema = new mongoose.Schema({
 	first_name: String,
